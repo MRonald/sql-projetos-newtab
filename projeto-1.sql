@@ -2,7 +2,7 @@
 DROP DATABASE IF EXISTS finance_control;
 
 # Criando o banco
-CREATE DATABASE IF NOT EXISTS finance_control;
+CREATE DATABASE IF NOT EXISTS finance_control default character set utf8 default collate utf8_general_ci;
 
 USE finance_control;
 

@@ -51,7 +51,7 @@ INSERT INTO card VALUES
 	(DEFAULT, "1234567891234567", "325", "2025-06-22", TRUE, "2021-06-04 12:22:36"),
     (DEFAULT, "6546846513513849", "456", "2027-12-24", TRUE, "2021-06-03 15:35:00"),
     (DEFAULT, "1658465432761136", "291", "2022-11-01", TRUE, "2021-06-03 19:03:24");
-
+    
 # Cartões válidos em ordem da data de cadastro
 SELECT * FROM card WHERE valid = TRUE ORDER BY register_date ASC;
 
@@ -80,7 +80,7 @@ INSERT INTO transaction VALUES
     (DEFAULT, 3, 3, 23452.50, "2021-06-03 19:03:24");
 
 # Dados com JOIN em ordem decrescente da data de cadastro
-SELECT t.id, u.name, u.username, c.number, c.cvv, DATE_FORMAT(c.expiration_date, '%c/%y'), c.valid, t.value, t.register_date
+SELECT t.id, u.name, u.username, c.number, c.cvv, DATE_FORMAT(c.expiration_date, '%m/%y'), c.valid, t.value, t.register_date
 FROM transaction t JOIN user u ON t.id_user = u.id JOIN card c ON t.id_card = c.id;
 
 # ---------------
